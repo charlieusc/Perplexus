@@ -17,7 +17,7 @@ public class PortalEntrance : MonoBehaviour {
     {
         if(other.gameObject.name == "Ball")
         {
-            other.gameObject.transform.position = GameObject.Find("Des").gameObject.transform.position;
+            other.gameObject.transform.position = GameObject.Find("Des").gameObject.transform.position + GameObject.Find("Des").gameObject.transform.up * 0.5f;
         }
     }
 }
