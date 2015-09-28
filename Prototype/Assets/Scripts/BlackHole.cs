@@ -18,7 +18,7 @@ public class BlackHole : MonoBehaviour {
         if(col.gameObject.name == "Ball")
         {
             Destroy(col.gameObject);
-            Application.LoadLevel("MariaTest");
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
