@@ -45,33 +45,50 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\BoltMoving.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\Shooting.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\ButtonHandler.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\CrossPlatformInputManager.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\Joystick.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\MobileInput.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\StandaloneInput.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\VirtualInput.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\BigBallScript.cs" />
+     <Compile Include="Assets\Scripts\BlackHole.cs" />
+     <Compile Include="Assets\Scripts\BouncyElementEvent.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Scripts\ConveyorBeltEvent.cs" />
+     <Compile Include="Assets\Scripts\DoorTriggerEvent.cs" />
      <Compile Include="Assets\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
-     <Compile Include="Assets\Scripts\Jialin_Yang_Scr\BouncyElementEvent.cs" />
-     <Compile Include="Assets\Scripts\Jialin_Yang_Scr\DoorTriggerEvent.cs" />
-     <Compile Include="Assets\Scripts\Jialin_Yang_Scr\MagnetforBall.cs" />
+     <Compile Include="Assets\Scripts\MagnetEvent.cs" />
+     <Compile Include="Assets\Scripts\MovingPaddle.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\PortalEntrance.cs" />
      <Compile Include="Assets\Scripts\RailScript.cs" />
      <Compile Include="Assets\Scripts\ResizePanel.cs" />
-     <Compile Include="Assets\Scripts\Ruiyuan_Meng_Scr\BlackHole.cs" />
-     <Compile Include="Assets\Scripts\Ruiyuan_Meng_Scr\PortalEntrance.cs" />
-     <Compile Include="Assets\Scripts\Ruiyuan_Meng_Scr\Spining.cs" />
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\Scripts\Spining.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Scripts\WheelRotation.cs" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
