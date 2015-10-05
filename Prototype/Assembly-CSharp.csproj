@@ -45,15 +45,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Accelerator\Accelerator.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\BoltLife.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\ShootBolt.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\BeltController.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\ConveyorSpeed.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\WheelController.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\ScaleBlock\ScaleController.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\TrigerBlock\TrigerController.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualController\VirtualJoystick.cs" />
+     <Compile Include="Assets\Prefabs\lld_Accelerator\Accelerator.cs" />
+     <Compile Include="Assets\Prefabs\lld_Cannon\BoltLife.cs" />
+     <Compile Include="Assets\Prefabs\lld_Cannon\ShootBolt.cs" />
+     <Compile Include="Assets\Prefabs\lld_Conveyor\BeltController.cs" />
+     <Compile Include="Assets\Prefabs\lld_Conveyor\ConveyorSpeed.cs" />
+     <Compile Include="Assets\Prefabs\lld_Conveyor\WheelController.cs" />
+     <Compile Include="Assets\Prefabs\lld_ScaleBlock\ScaleController.cs" />
+     <Compile Include="Assets\Prefabs\lld_TrigerBlock\TrigerController.cs" />
+     <Compile Include="Assets\Prefabs\lld_VirtualController\VirtualJoystick.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\BigBallScript.cs" />
@@ -77,6 +77,10 @@
      <Compile Include="Assets\Scripts\Spining.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Scripts\WheelRotation.cs" />
+     <Compile Include="Assets\Scripts\lld_CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\lld_PlayerController.cs" />
+     <Compile Include="Assets\Scripts\lld_RotateFollow.cs" />
+     <Compile Include="Assets\Scripts\lld_TrigerDestroy.cs" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />

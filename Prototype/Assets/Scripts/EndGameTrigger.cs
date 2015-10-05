@@ -14,7 +14,7 @@ public class EndGameTrigger : MonoBehaviour
 	{
 		if (other.gameObject.name == "Ball") {
 			if (Application.loadedLevelName == "MariaTest") {
-				Application.LoadLevel ("Menu 3D");
+				Application.LoadLevel ("lld_MiniGame");
 			} 
 			else {
 				Application.LoadLevel ("MariaTest");
