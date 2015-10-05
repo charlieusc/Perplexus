@@ -45,14 +45,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\BoltMoving.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\Shooting.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\ButtonHandler.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\CrossPlatformInputManager.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\Joystick.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\MobileInput.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\StandaloneInput.cs" />
-     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualJoyStick\VirtualInput.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Accelerator\Accelerator.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\BoltLife.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Cannon\ShootBolt.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\BeltController.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\ConveyorSpeed.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\Conveyor\WheelController.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\ScaleBlock\ScaleController.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\TrigerBlock\TrigerController.cs" />
+     <Compile Include="Assets\Prefabs\Lindong_Li_Pre\VirtualController\VirtualJoystick.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\BigBallScript.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
+     <Compile Include="Assets\Scripts\EndGameTrigger.cs" />
      <Compile Include="Assets\Scripts\MagnetEvent.cs" />
      <Compile Include="Assets\Scripts\MovingPaddle.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
