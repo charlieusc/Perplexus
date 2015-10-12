@@ -13,11 +13,11 @@ public class EndGameTrigger : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.gameObject.name == "Ball") {
-			if (Application.loadedLevelName == "MariaTest") {
-				Application.LoadLevel ("lld_MiniGame");
+			if (Application.loadedLevelName == "Level_2") {
+				Application.LoadLevel ("Level_3");
 			} 
 			else {
-				Application.LoadLevel ("MariaTest");
+				Application.LoadLevel ("Level_2");
 			}
 		}
 

@@ -15,6 +15,6 @@ public class ApplicationManager : MonoBehaviour {
 
 	public void OnNewGameClick()
 	{
-		Application.LoadLevel ("Perplexus_start");
+		Application.LoadLevel ("Level_1");
 	}
 }
