@@ -12,7 +12,9 @@ namespace VirtualController
 		static internal void RegisterAxis (string name)
 		{
 			if (!data.ContainsKey (name)) {
-				data.Add (name, 0.0f);
+				data.Add (name, 0f);
+			} else {
+				Debug.LogError (name + " Axis register twice");
 			}
 		}
 
@@ -32,42 +34,50 @@ namespace VirtualController
 		public string horizontalName = "Horizontal";
 		public string verticalName = "Vertical";
 		public GameObject boundaryImage;
-		public float area = 50.0f;
+		public float area = 50f;
+		/************************/
+		private bool horizontalLock = true;
+		private bool verticalLock = true;
 		/************************/
 		private Vector3 canvasPos;
-		private bool notzero = true;
-		private Vector2 canvasOffsetPos;
 		private bool draging = false;
+		private bool notzero = false;
+		private Vector2 canvasOffsetPos;
 		private Vector2 canvasLastOffset;
 		private Vector2 dragstartPos;
-		private Vector2 dragOffsetPos;
 
 		void Start ()
 		{
+			boundaryImage.transform.SetParent (transform.parent);
 			canvasPos = transform.position;
 			canvasOffsetPos = Vector2.zero;
-			Joysticks.RegisterAxis (horizontalName);
-			Joysticks.RegisterAxis (verticalName);
-			boundaryImage.transform.SetParent (transform.parent);
+			canvasLastOffset = Vector2.zero;
+			if (horizontalName != "") {
+				Joysticks.RegisterAxis (horizontalName);
+				horizontalLock = false;
+			}
+			if (verticalName != "") {
+				Joysticks.RegisterAxis (verticalName);
+				verticalLock = false;
+			}
 		}
 
 		void FixedUpdate ()
 		{
-			if (notzero || draging) {
-				Joysticks.UpdateAxis (horizontalName, canvasOffsetPos.x / area);
-				Joysticks.UpdateAxis (verticalName, canvasOffsetPos.y / area);
+			if (draging || notzero) {
 				if (!draging) {
-					if (canvasOffsetPos.Equals (Vector2.zero)) {
-						notzero = false;
-					} else {
-						canvasOffsetPos *= 0.85f;
-						if (canvasOffsetPos.sqrMagnitude < 2.0f) {
-							canvasOffsetPos = Vector2.zero;
-						}
-					}
+					canvasOffsetPos -= Vector2.ClampMagnitude (canvasOffsetPos, 3f);
+					notzero = (canvasOffsetPos != Vector2.zero);
+				} else {
+					notzero = true;
 				}
-				Vector3 offsetcache = new Vector3 (canvasOffsetPos.x, canvasOffsetPos.y, 0.0f);
-				transform.position = canvasPos + offsetcache;
+				if (!horizontalLock) {
+					Joysticks.UpdateAxis (horizontalName, canvasOffsetPos.x / area);
+				}
+				if (!verticalLock) {
+					Joysticks.UpdateAxis (verticalName, canvasOffsetPos.y / area);
+				}
+				transform.position = canvasPos + new Vector3 (canvasOffsetPos.x, canvasOffsetPos.y, 0f);
 			}
 		}
 
@@ -76,13 +86,18 @@ namespace VirtualController
 			canvasLastOffset = canvasOffsetPos;
 			dragstartPos = eventData.position;
 			draging = true;
-			notzero = true;
 		}
 
 		public void OnDrag (PointerEventData eventData)
 		{
-			dragOffsetPos = eventData.position - dragstartPos;
-			canvasOffsetPos = Vector2.ClampMagnitude (canvasLastOffset + dragOffsetPos, area);
+			canvasOffsetPos = canvasLastOffset + eventData.position - dragstartPos;
+			if (horizontalLock) {
+				canvasOffsetPos.x = 0f;
+			}
+			if (verticalLock) {
+				canvasOffsetPos.y = 0f;
+			}
+			canvasOffsetPos = Vector2.ClampMagnitude (canvasOffsetPos, area);
 		}
 		
 		public void OnEndDrag (PointerEventData eventData)

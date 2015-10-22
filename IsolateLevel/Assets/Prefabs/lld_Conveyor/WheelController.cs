@@ -5,10 +5,12 @@ public class WheelController : MonoBehaviour
 {
 	public GameObject father;
 	public GameObject child;
+	/**********************/
 	private float friction;
 	private float speed;
 	private float radian;
 	private float rotate;
+	private AudioSource frictionSound;
 
 	void Start ()
 	{
@@ -17,6 +19,7 @@ public class WheelController : MonoBehaviour
 		transform.Translate (transform.right * (distance - radian) * 0.5f, Space.World);
 		transform.localScale = new Vector3 (radian / distance, 1.0f, 1.0f);
 		OnUpdateVariable ();
+		frictionSound = father.GetComponent<AudioSource> ();
 	}
 
 	void OnUpdateVariable ()
@@ -54,5 +57,13 @@ public class WheelController : MonoBehaviour
 	void OnCollisionStay (Collision other)
 	{
 		HandleCollision (other);
+		if ((speed != 0f) && !frictionSound.isPlaying) {
+			frictionSound.UnPause ();
+		}
+	}
+
+	void OnCollisionExit ()
+	{
+		frictionSound.Pause ();
 	}
 }

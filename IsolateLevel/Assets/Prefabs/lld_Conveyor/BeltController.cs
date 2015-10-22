@@ -7,7 +7,6 @@ public class BeltController : MonoBehaviour
 	/***********************/
 	private float friction;
 	private float speed;
-	private int collisionCount = 0;
 	private AudioSource frictionSound;
 
 	void Start ()
@@ -16,7 +15,7 @@ public class BeltController : MonoBehaviour
 		float radian = Mathf.Min (distance, father.transform.localScale.z);
 		transform.localScale = new Vector3 (2.0f - radian / distance, transform.localScale.y, 1.0f);
 		OnUpdateVariable ();
-		frictionSound = GetComponent<AudioSource> ();
+		frictionSound = father.GetComponent<AudioSource> ();
 		frictionSound.Pause ();
 	}
 	
@@ -50,23 +49,18 @@ public class BeltController : MonoBehaviour
 	void OnCollisionEnter (Collision other)
 	{
 		HandleCollision (other);
-		if (speed == 0f) {
-			frictionSound.Pause ();
-		} else if (collisionCount == 0) {
-			frictionSound.UnPause ();
-		}
-		++collisionCount;
 	}
 	
 	void OnCollisionStay (Collision other)
 	{
 		HandleCollision (other);
+		if ((speed != 0f) && !frictionSound.isPlaying) {
+			frictionSound.UnPause ();
+		}
 	}
 
 	void OnCollisionExit ()
 	{
-		if (--collisionCount == 0) {
-			frictionSound.Pause ();
-		}
+		frictionSound.Pause ();
 	}
 }

@@ -13,7 +13,5 @@ public class lld_SpecialTriggers : MonoBehaviour
 	{
 		Text winText = GetComponent<Text> ();
 		winText.text = "You Win!";
-		// Load menu
-		Application.LoadLevel (Application.loadedLevel);
 	}
 }

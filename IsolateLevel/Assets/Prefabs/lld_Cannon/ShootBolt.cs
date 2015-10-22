@@ -10,6 +10,7 @@ public class ShootBolt : MonoBehaviour
 	public float minfirePrepare = 2.0f;
 	public float maxfirePrepare = 4.0f;
 	public List<GameObject> bolts;
+	public AudioClip fireSource;
 	/*********************/
 	private GameObject reload = null;
 	private bool auto = false;
@@ -24,6 +25,7 @@ public class ShootBolt : MonoBehaviour
 				reload.GetComponent<Rigidbody> ().velocity = SpawnPos.forward * boltSpeed;
 				nextReload = Time.time + reloadTime;
 				reload = null;
+				AudioSource.PlayClipAtPoint (fireSource, transform.position);
 			}
 		} else if (auto) {
 			if (Time.time >= nextReload) {

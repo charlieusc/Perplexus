@@ -10,7 +10,8 @@ public class lld_PlayerSounds : MonoBehaviour
 	void OnCollisionEnter (Collision other)
 	{
 		if (!other.gameObject.CompareTag ("NoSound")) {
-			AudioSource.PlayClipAtPoint (collisionSource, transform.position, Mathf.Abs (other.impulse.magnitude) * 0.04f);
+			float cache = other.impulse.sqrMagnitude;
+			AudioSource.PlayClipAtPoint (collisionSource, transform.position, cache / (cache + 75f));
 		}
 	}
 
